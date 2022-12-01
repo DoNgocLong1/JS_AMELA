@@ -86,18 +86,6 @@ console.log(totalDivisorOfNumber(15))
 const sortToMinNumber = num => {
     
     if(typeof num == 'number') {
-        /* let str = num.toString().split('')
-        if( num[0] === '0') {
-            str = str.substring(1)
-            console.log(str)
-        }
-        str.sort()
-        if(str[0] === '0') {
-            str[0] = str[1]
-            str[1] = 0
-        }
-        return str.join('') */ 
-
         // initialize frequency of each digit to Zero
         var freq = Array(10).fill(0);
         // count frequency of each digit in the number
