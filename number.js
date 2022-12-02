@@ -86,35 +86,24 @@ console.log(totalDivisorOfNumber(15))
 const sortToMinNumber = num => {
     
     if(typeof num == 'number') {
-        /* let str = num.toString().split('')
-        if( num[0] === '0') {
-            str = str.substring(1)
-            console.log(str)
-        }
-        str.sort()
-        if(str[0] === '0') {
-            str[0] = str[1]
-            str[1] = 0
-        }
-        return str.join('') */ 
-
         // initialize frequency of each digit to Zero
-        var freq = Array(10).fill(0);
+        let freq = Array(10).fill(0);
         // count frequency of each digit in the number
         while (num)
         {
-            var d = num % 10; // extract last digit
+            let d = num % 10; // extract last digit
             freq[d]++; // increment counting
             num = parseInt(num / 10); //remove last digit
         }
     
         // Set the LEFTMOST digit to minimum expect 0
-        var result = 0;
-        for (var i = 1 ; i <= 9 ; i++)
+        let result = 0;
+        for (let i = 1 ; i <= 9 ; i++)
         {
             if (freq[i])
-            {
+            {             
                 result = i;
+                console.log(result)
                 freq[i]--;
                 break;
             }
@@ -122,7 +111,7 @@ const sortToMinNumber = num => {
     
         // arrange all remaining digits
         // in ascending order
-        for (var i = 0 ; i <= 9 ; i++)
+        for (let i = 0 ; i <= 9 ; i++)
             while (freq[i]--)
                 result = result * 10 + i;
     
@@ -130,4 +119,4 @@ const sortToMinNumber = num => {
     }
     return `${num} is ${ typeof num} type` 
 }
-console.log(sortToMinNumber(300751))
+console.log(sortToMinNumber(900756))
