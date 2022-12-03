@@ -3,21 +3,42 @@ let user = {
     age : 25,
     email : 'support@amela.vn'
 };
-
+const validateArray = (obj) => {
+    if( typeof obj === 'object' && !Array.isArray(obj) && obj !== null) {
+        return true
+    }
+    throw new Error(`${obj} invalid`);
+}
 //BAI1
-console.log(Object.keys(user))
+const getKeys = (obj) => {
+    validateArray(obj)
+    return Object.keys(obj)
+}
+console.log(getKeys(user))
 
 
 //BAI2
-console.log(Object.values(user))
+const getValues = (obj) => {
+    validateArray(obj)
+    return Object.values(obj)
+}
+console.log(getValues(user))
 
 
 //BAI3
-console.log(user.hasOwnProperty('property1'))
+const checkProperty = (obj, arr) => {
+    validateArray(obj)
+    return obj.hasOwnProperty(arr)
+}
+console.log(checkProperty(user,'property1'))
 
 
 //BAI4
-console.log(Object.keys(user).length)
+const checkObjectLength = (obj) => {
+    validateArray(obj)
+    return getKeys(obj).length
+}
+console.log(checkObjectLength(user))
 
 
 //BAI5
